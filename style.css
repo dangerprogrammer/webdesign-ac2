@@ -180,13 +180,38 @@ img {
 }
 
 .topic-container {
-    flex-basis: 300px;
+    flex-basis: 18rem;
     flex-grow: 1;
     background: red;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 1rem;
 }
 
-.topic-container:nth-child(dd) {
-    background: gray;
+.topic-container > *:not(.img) {
+    padding: 1rem 1.5rem;
+}
+
+.topic-container .img {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background-color: blue;
+    overflow: hidden;
+}
+
+.topic-container .img img {
+    transition: .4s ease-in-out;
+}
+
+.topic-container:hover .img img {
+    scale: 1.1;
+}
+
+.topic-container p {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 @media screen and (max-width: 80rem) {
