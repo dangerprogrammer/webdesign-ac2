@@ -11,6 +11,7 @@
 
 :root {
     --bg-clr: #08f;
+    --bg-clr2: #83f;
 }
 
 body {
@@ -38,7 +39,7 @@ header {
     white-space: nowrap;
     position: sticky;
     width: 100vw;
-    background: var(--bg-clr);
+    background: linear-gradient(45deg, var(--bg-clr), var(--bg-clr2));
     border-radius: 0 0 1.5rem 1.5rem;
     box-shadow: 0 .15rem 1.5rem #0003;
 }
@@ -200,8 +201,14 @@ img {
     scale: 1;
 }
 
-.topic-container > *:not(.img) {
+.topic-container > *:not(span), .title {
     padding: 0rem 1.5rem;
+}
+
+.topic-container > span {
+    border-radius: 1rem 1rem 2rem 2rem;
+    overflow: hidden;
+    background: linear-gradient(90deg, var(--bg-clr), var(--bg-clr2));
 }
 
 .topic-container .img {
@@ -209,7 +216,7 @@ img {
     aspect-ratio: 4 / 3;
     overflow: hidden;
     border-radius: 2rem;
-    border: .5rem solid var(--bg-clr);
+    border: .5rem solid transparent;
 }
 
 .topic-container p {
@@ -224,18 +231,6 @@ img {
     position: relative;
     user-select: none;
     color: #fff;
-    background: var(--bg-clr);
-}
-
-.topic-container .title::after {
-    content: '';
-    position: absolute;
-    height: 2rem;
-    width: 100%;
-    background: var(--bg-clr);
-    left: 0;
-    bottom: 0;
-    translate: 0 100%;
 }
 
 .topic-container p button {
@@ -254,5 +249,11 @@ img {
 @media screen and (max-width: 80rem) {
     main .first-section {
         grid-template-columns: auto;
+    }
+}
+
+@media screen and (max-width: 60rem) {
+    header ul {
+        display: none;
     }
 }
