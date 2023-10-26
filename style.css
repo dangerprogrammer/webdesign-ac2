@@ -253,8 +253,23 @@ img {
 .third-section {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     gap: 1em;
+}
+
+.third-section a {
+    padding: .5em 2em;
+    border-radius: 4em;
+    background-color: #eeea;
+    color: #111;
+    font-size: 1.15em;
+    font-weight: 700;
+    transition: .15s ease-in-out;
+}
+
+.third-section a:hover {
+    box-shadow: 0 .15em 1em #6663;
 }
 
 @media screen and (max-width: 80rem) {
