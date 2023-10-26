@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Varela+Round&family=Tilt+Neon&display=swap');
 
 * {
     margin: 0;
@@ -42,6 +42,20 @@ header {
     background: linear-gradient(45deg, var(--bg-clr), var(--bg-clr2));
     border-radius: 0 0 1.5rem 1.5rem;
     box-shadow: 0 .15rem 1.5rem #0003;
+}
+
+header .logo {
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+}
+
+.logo .name {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: #eee;
+    font-family: Kanit;
+    letter-spacing: .075em;
 }
 
 header nav button {
