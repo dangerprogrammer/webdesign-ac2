@@ -250,6 +250,13 @@ img {
     letter-spacing: .1em;
 }
 
+.third-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1em;
+}
+
 @media screen and (max-width: 80rem) {
     main .first-section {
         grid-template-columns: auto;
