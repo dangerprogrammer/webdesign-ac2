@@ -4,8 +4,6 @@ let amount = 0,
     option = budgetsOption.options[budgetsOption.selectedIndex].value,
     plansSize = {'monthly': 1, 'anual': 12};
 
-console.log(monthlyDiscount);
-
 menubarButton.addEventListener('click', () => {
     menubarButton.classList.toggle('showing');
 });
