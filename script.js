@@ -37,6 +37,8 @@ function updatePrice() {
 
             monthlyDiscount.innerHTML = mensalDiscountTxt;
     };
+
+    console.log(fullPrice);
 };
 
 function recursiveDiscount({ fullPrice, times = 0 }) {
