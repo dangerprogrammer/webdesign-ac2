@@ -29,7 +29,24 @@
     </header>
     <main>
         <section class="four-section">
-            
+            <header>
+                <h1>Secure Bridge - Orçamento</h1>
+            </header>
+            <div class="budgets-settings">
+                <span>
+                    <p class="desc">Duração total do plano</p>
+                    <div class="budgets-container">
+                        <input type="number" id="budgets-amount">
+                        <select id="budgets-option">
+                            <option value="monthly" selected>Meses</option>
+                            <option value="anual">Anos</option>
+                        </select>
+                    </div>
+                </span>
+                <p id="budgets-discount" class="hidden">Que maravilha! Com este plano, você terá
+                    <strong id="monthly-discount"></strong> de desconto ao mês!</p>
+                <p>Calcule seu orçamento como preferir!</p>
+            </div>
         </section>
     </main>
     <script src="./script.js"></script>

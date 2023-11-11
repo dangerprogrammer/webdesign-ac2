@@ -19,6 +19,7 @@ body {
     display: flex;
     overflow-x: hidden;
     flex-direction: column;
+    font-size: clamp(.8rem, 2vw, 1rem);
 }
 
 ::-webkit-scrollbar {
@@ -316,7 +317,89 @@ img {
     box-shadow: 0 .15em 1em #6663;
 }
 
-.four-section {}
+.four-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* background: red; */
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow:  0 1em 2rem #1112;
+    padding: 1em 2em;
+}
+
+.four-section header {
+    all: unset;
+    /* background: linear-gradient(45deg, var(--bg-clr), var(--bg-clr2)); */
+    width: 100%;
+    text-align: center;
+    padding-block: 1em;
+    color: #111;
+}
+
+.four-section header h1 {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.four-section .budgets-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+    max-width: 30rem;
+}
+
+.four-section .budgets-settings .desc {
+    margin: 0;
+    font-weight: 600;
+    font-size: .9em;
+}
+
+.four-section .budgets-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.four-section .budgets-container input {
+    border: 2px solid #eee;
+    outline: 3px solid transparent;
+    width: 100%;
+    padding: .5em 1em;
+    border-radius: .5rem;
+    font-weight: bold;
+    transition: outline .25s ease-in-out;
+}
+
+.four-section .budgets-container input:focus {
+    border-color: #20f;
+    outline-color: #20f3;
+}
+
+.four-section .budgets-container select {
+    position: absolute;
+    right: .3em;
+    top: .3em;
+    bottom: .3em;
+    padding-inline-start: .3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: .2rem;
+}
+
+.four-section .budgets-container select:hover {
+    background: #f5f5f5;
+}
+
+.hidden {
+    display: none;
+}
 
 @media screen and (max-width: 80rem) {
     main .first-section {
@@ -343,5 +426,24 @@ img {
 
     header nav button.showing .hamburguer, header nav button:not(.showing) .close {
         display: none;
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .grid span {
+        width: 80%;
+    }
+
+    .grid span img {
+        position: relative;
+    }
+
+    .grow {
+        grid-row: initial !important;
     }
 }
