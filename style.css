@@ -96,6 +96,7 @@ header ul {
     gap: .25em;
     font-weight: 600;
     flex-wrap: wrap;
+    margin: 0;
 }
 
 header li {
@@ -314,6 +315,8 @@ img {
 .third-section a:hover {
     box-shadow: 0 .15em 1em #6663;
 }
+
+.four-section {}
 
 @media screen and (max-width: 80rem) {
     main .first-section {
