@@ -1,4 +1,4 @@
-const [menubarButton, budgetsAmout, budgetsOption, budgetsDiscount, monthlyDiscount] = getByIds('toggle-menubar', 'budgets-amount', 'budgets-option', 'budgets-discount', 'monthly-discount');
+const [menubarButton, budgetsAmout, budgetsOption, budgetsDiscount, monthlyDiscount, fullDiscount] = getByIds('toggle-menubar', 'budgets-amount', 'budgets-option', 'budgets-discount', 'monthly-discount', 'full-discount');
 
 let amount = 0,
     option = budgetsOption.options[budgetsOption.selectedIndex].value,
@@ -33,9 +33,11 @@ function updatePrice() {
         fullPrice = recursiveDiscount({ fullPrice, times: discountTimes });
 
         const mensalDiscount = (initialPrice - fullPrice) / totalMonths,
-            mensalDiscountTxt = mensalDiscount.toLocaleString('pt-br', { style: 'currency', currency: 'BRL'})
+            mensalDiscountTxt = mensalDiscount.toLocaleString('pt-br', { style: 'currency', currency: 'BRL'}),
+            fullDiscountTxt = (initialPrice - fullPrice).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
 
             monthlyDiscount.innerHTML = mensalDiscountTxt;
+            fullDiscount.innerHTML = fullDiscountTxt;
     };
 
     console.log(fullPrice);
