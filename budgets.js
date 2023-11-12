@@ -26,7 +26,7 @@ function updatePrice() {
     budgetsDiscount.classList.toggle('hidden', !discountTimes);
 
     if (discountTimes) {
-        fullPrice *= 1 - (5 / 100) ** discountTimes;
+        fullPrice *= (1 - 5 / 100) ** discountTimes;
 
         const mensalDiscount = (initialPrice - fullPrice) / totalMonths,
             mensalDiscountTxt = mensalDiscount.toLocaleString('pt-br', { style: 'currency', currency: 'BRL'}),
@@ -35,8 +35,6 @@ function updatePrice() {
             monthlyDiscount.innerHTML = mensalDiscountTxt;
             fullDiscount.innerHTML = fullDiscountTxt;
     };
-
-    console.log(fullPrice);
 };
 
 function getByIds(...ids) {
