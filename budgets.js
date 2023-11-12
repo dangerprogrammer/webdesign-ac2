@@ -1,4 +1,4 @@
-const [budgetsAmout, budgetsOption, budgetsDiscount, monthlyDiscount, fullDiscount] = getByIds('budgets-amount', 'budgets-option', 'budgets-discount', 'monthly-discount', 'full-discount');
+const [budgetsAmout, budgetsOption, monthlyDiscount, fullDiscount, monthlyPrice, fullPrice] = getByIds('budgets-amount', 'budgets-option', 'monthly-discount', 'full-discount', 'monthly-price', 'full-price');
 
 let amount = 0,
     option = budgetsOption.options[budgetsOption.selectedIndex].value,
@@ -21,20 +21,19 @@ budgetsAmout.addEventListener('change', ({ target: { value } }) => {
 function updatePrice() {
     const totalMonths = (plansSize[option] || 0) * amount, discountTimes = Math.floor(totalMonths / 6), defaultPrice = 200,
         initialPrice = defaultPrice * totalMonths;
-    let fullPrice = initialPrice;
+    let fullRealPrice = initialPrice;
 
-    budgetsDiscount.classList.toggle('hidden', !discountTimes);
+    fullRealPrice *= (1 - 5 / 100) ** discountTimes;
 
-    if (discountTimes) {
-        fullPrice *= (1 - 5 / 100) ** discountTimes;
+    const mensalDiscount = (initialPrice - fullRealPrice) / totalMonths,
+        mensalDiscountTxt = (-mensalDiscount || -0).toLocaleString('pt-br', { style: 'currency', currency: 'BRL'}),
+        fullDiscountTxt = (-(initialPrice - fullRealPrice)).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
 
-        const mensalDiscount = (initialPrice - fullPrice) / totalMonths,
-            mensalDiscountTxt = mensalDiscount.toLocaleString('pt-br', { style: 'currency', currency: 'BRL'}),
-            fullDiscountTxt = (initialPrice - fullPrice).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+    monthlyDiscount.innerHTML = mensalDiscountTxt;
+    fullDiscount.innerHTML = fullDiscountTxt;
 
-            monthlyDiscount.innerHTML = mensalDiscountTxt;
-            fullDiscount.innerHTML = fullDiscountTxt;
-    };
+    monthlyPrice.innerHTML = ((fullRealPrice / totalMonths) || 0).toLocaleString('pt-br', { style: 'currency', currency: 'BRL'});
+    fullPrice.innerHTML = fullRealPrice.toLocaleString('pt-br', { style: 'currency', currency: 'BRL'});
 };
 
 function getByIds(...ids) {
