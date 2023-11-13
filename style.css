@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Varela+Round&family=Tilt+Neon&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -76,7 +75,7 @@ header nav button {
     cursor: pointer;
 }
 
-header nav button > * {
+header nav button>* {
     position: relative;
     height: 2rem;
     width: 2rem;
@@ -250,11 +249,12 @@ img {
     scale: 1;
 }
 
-.topic-container > *:not(span), .title {
+.topic-container>*:not(span),
+.title {
     padding: 0rem 1.5rem;
 }
 
-.topic-container > span {
+.topic-container>span {
     border-radius: 1rem 1rem 2rem 2rem;
     overflow: hidden;
     background: linear-gradient(90deg, var(--bg-clr), var(--bg-clr2));
@@ -325,7 +325,7 @@ img {
     /* background: red; */
     border-radius: 2rem;
     overflow: hidden;
-    box-shadow:  0 1em 2rem #1112;
+    box-shadow: 0 1em 2rem #1112;
     padding: 1em 2em;
 }
 
@@ -411,38 +411,32 @@ img {
     header {
         padding: 1.5rem 4vw;
     }
-
     header ul {
         display: none;
     }
-
     header nav button {
         display: block;
     }
-
-    header nav button:not(.showing) .hamburguer, header nav button.showing .close {
+    header nav button:not(.showing) .hamburguer,
+    header nav button.showing .close {
         display: flex;
     }
-
-    header nav button.showing .hamburguer, header nav button:not(.showing) .close {
+    header nav button.showing .hamburguer,
+    header nav button:not(.showing) .close {
         display: none;
     }
-
     .grid {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
-
     .grid span {
         width: 80%;
     }
-
     .grid span img {
         position: relative;
     }
-
     .grow {
         grid-row: initial !important;
     }
